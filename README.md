@@ -262,7 +262,7 @@ The first step with these microservices is to set up a custom application, which
 
 [Kit App Template](https://github.com/NVIDIA-Omniverse/kit-app-template/) enables  developers fine-tune their custom application needs based on Kit 106.2. 
 
-Before getting started with the Kit template defined here, ensure your development environment meets the system requirements outlined in this document here \[LINK\].
+Before getting started with the Kit template defined here, ensure your development environment meets the system requirements outlined in this document [here](#system-requirements).
 
 1. Clone the Kit App Template repository using the following command:  
    ```
