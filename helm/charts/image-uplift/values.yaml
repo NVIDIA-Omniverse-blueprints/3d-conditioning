@@ -1,0 +1,23 @@
+appName: image-uplift
+
+image:
+  # When switching to another image uplifting logic, change this container name and tag
+  repository: "nvcr.io/nvidia/omniverse/conditioning-for-precise-visual-generative-ai-imagegen-stub"
+  tag: "1.0.0"
+  pullPolicy: "Always"
+  containerPort: 8080
+  servicePort: 80
+
+resources:
+  # When switching to another image uplifting logic, update the resource requirements
+  limits:
+    # cpu: 8000m
+    # memory: 30144Mi
+    # nvidia.com/gpu: 1
+  requests:
+    # cpu: 8000m
+    # memory: 30144Mi
+    # nvidia.com/gpu: 1
+
+global:
+  imagePullSecretName: ""

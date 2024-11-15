@@ -1,0 +1,74 @@
+{
+    "env" : {
+        "sharedIncludePaths": [
+            "${workspaceFolder}/_build/target-deps",
+            "${workspaceFolder}/_build/target-deps/python/include",
+            "${workspaceFolder}/_build/target-deps/carb_gfx_plugins/include",
+            "${workspaceFolder}/_build/target-deps/forgelib/include/",
+            "${workspaceFolder}/_build/target-deps/kaguya/include",
+            "${workspaceFolder}/_build/target-deps/lua/include",
+            "${workspaceFolder}/include",
+            "${workspaceFolder}/source/tests/plugins",
+            "${workspaceFolder}/source/tests",
+            "source/examples/example04.lua/plugins",
+            "source/examples/example06.hotreload/plugins",
+            "source/examples/example.scripting/include"
+        ]
+    },
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/include",
+                "/usr/local/include",
+                "${sharedIncludePaths}"
+            ],
+            "defines": [
+                "__linux__"
+            ],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++11"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/_build/host-deps/msvc/VC/include",
+                "${workspaceFolder}/_build/host-deps/winsdk/include/um",
+                "${workspaceFolder}/_build/host-deps/winsdk/include/ucrt",
+                "${workspaceFolder}/_build/host-deps/winsdk/include/shared",
+                "${workspaceFolder}/_build/host-deps/winsdk/include/winrt",
+                "${sharedIncludePaths}"
+            ],
+            "defines": [
+                "UNICODE",
+                "_UNICODE",
+                "_WIN32"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "${workspaceFolder}/_build/host-deps/winsdk/include/um",
+                    "${workspaceFolder}/_build/host-deps/winsdk/include/ucrt",
+                    "${workspaceFolder}/_build/host-deps/winsdk/include/shared",
+                    "${workspaceFolder}/_build/host-deps/winsdk/include/winrt"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++11"
+        }
+    ],
+    "version": 4
+}

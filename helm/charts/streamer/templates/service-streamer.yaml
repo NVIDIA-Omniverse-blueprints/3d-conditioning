@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: streamer
+  labels:
+    app.kubernetes.io/name: streamer
+    app.kubernetes.io/instance: streamer
+spec:
+  type: ClusterIP
+  ports:
+  {{- $start := .Values.image_streamer.port_min1 | int }}
+  {{- $end := .Values.image_streamer.port_max1 | int }}
+  {{- $d := sub $end $start | int }}
+  {{- range $i := until (add1 $d | int) }}
+  {{- $p := add $start $i | int}}
+  - name: tcp-{{int $p}}
+    port: {{int $p}}
+    targetPort: {{int $p}}
+    protocol: TCP
+  {{- end }}
+  {{- $start := .Values.image_streamer.port_min1 | int }}
+  {{- $end := .Values.image_streamer.port_max1 | int }}
+  {{- $d := sub $end $start | int }}
+  {{- range $i := until (add1 $d | int) }}
+  {{- $p := add $start $i | int}}
+  - name: udp-{{int $p}}
+    port: {{int $p}}
+    targetPort: {{int $p}}
+    protocol: UDP
+  {{- end }}
+  {{- $start := .Values.image_streamer.port_min2 | int }}
+  {{- $end := .Values.image_streamer.port_max2 | int }}
+  {{- $d := sub $end $start | int }}
+  {{- range $i := until (add1 $d | int) }}
+  {{- $p := add $start $i | int}}
+  - name: tcp-{{int $p}}
+    port: {{int $p}}
+    targetPort: {{int $p}}
+    protocol: TCP
+  {{- end }}
+  {{- $start := .Values.image_streamer.port_min2 | int }}
+  {{- $end := .Values.image_streamer.port_max2 | int }}
+  {{- $d := sub $end $start | int }}
+  {{- range $i := until (add1 $d | int) }}
+  {{- $p := add $start $i | int}}
+  - name: udp-{{int $p}}
+    port: {{int $p}}
+    targetPort: {{int $p}}
+    protocol: UDP
+  {{- end }}
+  - name: tcp-{{ .Values.image_streamer.port1 }}
+    port: {{ .Values.image_streamer.port1 }}
+    targetPort: {{ .Values.image_streamer.port1 }}
+    protocol: TCP
+  - name: tcp-{{ .Values.image_streamer.port2 }}
+    port: {{ .Values.image_streamer.port2 }}
+    targetPort: {{ .Values.image_streamer.port2 }}
+    protocol: TCP
+  - name: tcp-{{ .Values.image_streamer.port3 }}
+    port: {{ .Values.image_streamer.port3 }}
+    targetPort: {{ .Values.image_streamer.port3 }}
+    protocol: TCP
+  selector:
+    app.kubernetes.io/name: {{ .Values.appName }}
+    app.kubernetes.io/instance: {{ .Values.appName }}

@@ -1,0 +1,5 @@
+Deployment information for 3D Conditioning for Precise Visual Generative AI:
+- Release Name: {{ .Release.Name }}
+- Namespace: {{ .Release.Namespace }}
+- Chart Name: {{ .Chart.Name }}
+- Chart Version: {{ .Chart.Version }}

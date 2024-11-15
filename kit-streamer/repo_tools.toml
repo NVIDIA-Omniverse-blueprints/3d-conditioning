@@ -1,0 +1,5 @@
+[repo_package_app]
+# Replace regular repo_package with our guided packaging tool
+command = "package_app"
+entry_point = "${root}/tools/repoman/package.py:setup_repo_tool"
+enabled = true

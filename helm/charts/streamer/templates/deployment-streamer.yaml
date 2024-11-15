@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}
+  labels:
+    app.kubernetes.io/name: {{ .Values.appName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ .Values.appName }}
+      app.kubernetes.io/instance: {{ .Values.appName }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ .Values.appName }}
+        app.kubernetes.io/instance: {{ .Values.appName }}
+    spec:
+      imagePullSecrets:
+        - name: {{ .Values.global.imagePullSecretName }}
+      containers:
+      - name: streamer
+        image: "{{ .Values.image_streamer.repository }}:{{ .Values.image_streamer.tag }}"
+        imagePullPolicy: {{ .Values.image_streamer.pullPolicy }}
+        ports:
+        {{- $start := .Values.image_streamer.port_min1 | int }}
+        {{- $end := .Values.image_streamer.port_max1 | int }}
+        {{- $d := sub $end $start | int }}
+        {{- range $i := until (add1 $d | int) }}
+        {{- $p := add $start $i | int}}
+        - name: tcp-{{int $p}}
+          containerPort: {{int $p}}
+          protocol: TCP
+        {{- end }}
+        {{- $start := .Values.image_streamer.port_min1 | int }}
+        {{- $end := .Values.image_streamer.port_max1 | int }}
+        {{- $d := sub $end $start | int }}
+        {{- range $i := until (add1 $d | int) }}
+        {{- $p := add $start $i | int}}
+        - name: udp-{{int $p}}
+          containerPort: {{int $p}}
+          protocol: UDP
+        {{- end }}
+        {{- $start := .Values.image_streamer.port_min2 | int }}
+        {{- $end := .Values.image_streamer.port_max2 | int }}
+        {{- $d := sub $end $start | int }}
+        {{- range $i := until (add1 $d | int) }}
+        {{- $p := add $start $i | int}}
+        - name: tcp-{{int $p}}
+          containerPort: {{int $p}}
+          protocol: TCP
+        {{- end }}
+        {{- $start := .Values.image_streamer.port_min2 | int }}
+        {{- $end := .Values.image_streamer.port_max2 | int }}
+        {{- $d := sub $end $start | int }}
+        {{- range $i := until (add1 $d | int) }}
+        {{- $p := add $start $i | int}}
+        - name: udp-{{int $p}}
+          containerPort: {{int $p}}
+          protocol: UDP
+        {{- end }}
+        - name: tcp-{{ .Values.image_streamer.port1 }}
+          containerPort: {{ .Values.image_streamer.port1 }}
+          protocol: TCP
+        - name: tcp-{{ .Values.image_streamer.port2 }}
+          containerPort: {{ .Values.image_streamer.port2 }}
+          protocol: TCP
+        - name: tcp-{{ .Values.image_streamer.port3 }}
+          containerPort: {{ .Values.image_streamer.port3 }}
+          protocol: TCP
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        env:
+        - name: COMFYUI_SERVER
+          value: "image-uplift:80"

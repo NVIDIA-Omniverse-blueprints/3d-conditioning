@@ -1,0 +1,62 @@
+# SPDX-FileCopyrightText: Copyright (c) 2024 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: LicenseRef-NvidiaProprietary
+#
+# NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
+# property and proprietary rights in and to this material, related
+# documentation and any modifications thereto. Any use, reproduction,
+# disclosure or distribution of this material and related documentation
+# without an express license agreement from NVIDIA CORPORATION or
+# its affiliates is strictly prohibited.
+
+[package]
+title = "AI Viewport Core"
+description = "A Viewport for Generative AI"
+version = "1.0.0"
+category = "AI"
+authors = ["Minjae Lee <minjael@nvidia.com>"]
+repository = ""
+keywords = ["viewport", "ai", "generation"]
+changelog = "docs/CHANGELOG.md"
+readme  = "docs/README.md"
+icon = "data/icon.png"
+preview_image = "data/preview.png"
+
+# publish to each platform & kit version separately
+writeTarget.platform = true
+writeTarget.kit = true
+
+[documentation]
+pages = [
+    "docs/CHANGELOG.md",
+]
+
+[[python.module]]
+name = "omni.ai.viewport.core"
+
+[[python.module]]
+path = "pip_prebundle"
+
+[settings]
+rtx.ecoMode.enabled = false
+
+# local version
+#exts."omni.ai.viewport.core".comfy.server_address = "127.0.0.1:8188"
+
+exts."omni.ai.viewport.core".comfy.workflows_folder = "workflows/"
+exts."omni.ai.viewport.core".comfy.default_workflow = "realtime_workflow_v3"
+
+# remote version
+#exts."omni.ai.viewport.core".comfy.server_address = "<REMOTE_IP_ADDRESS>:<PORT>"
+
+# container version
+exts."omni.ai.viewport.core".comfy.server_address = "comfyui:80"
+
+[[test]]
+pyCoverageEnabled = false  # prevents repeat torch imports
+args = [
+    "--/app/window/dpiScaleOverride=1.0",
+    "--/app/window/scaleToMonitor=false",
+    "--no-window",
+    "--/app/fastShutdown=true",
+    "--/rtx/ecoMode/enabled=false",
+]

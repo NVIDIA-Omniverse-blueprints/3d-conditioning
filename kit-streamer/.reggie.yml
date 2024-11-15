@@ -1,0 +1,15 @@
+project: '$CI_PROJECT_PATH_SLUG'
+artifacts_glob: '_testoutput/benchmark.*.json'
+error_on_metric_misconfig: true
+regression_detection:
+  metrics:
+    - metric_name: 'skipped'
+      func: never
+    - metric_name: 'passed'
+      func: bool_failure
+    - metric_name: '*'
+      func: stdev
+      params:
+        min_trailing_samples: 4
+        max_trailing_samples: 20
+        max_deviation: 4

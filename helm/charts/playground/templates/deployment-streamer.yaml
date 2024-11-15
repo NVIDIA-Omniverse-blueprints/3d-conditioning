@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}
+  labels:
+    app.kubernetes.io/name: {{ .Values.appName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ .Values.appName }}
+      app.kubernetes.io/instance: {{ .Values.appName }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ .Values.appName }}
+        app.kubernetes.io/instance: {{ .Values.appName }}
+    spec:
+      imagePullSecrets:
+        - name: {{ .Values.global.imagePullSecretName }}
+      containers:
+      - name: playground
+        image: "{{ .Values.image_playground.repository }}:{{ .Values.image_playground.tag }}"
+        imagePullPolicy: {{ .Values.image_playground.pullPolicy }}
+        ports:
+        - name: http
+          containerPort: {{ .Values.image_playground.containerPort }}
+          protocol: TCP
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}

@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: Copyright (c) 2024 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: LicenseRef-NvidiaProprietary
+#
+# NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
+# property and proprietary rights in and to this material, related
+# documentation and any modifications thereto. Any use, reproduction,
+# disclosure or distribution of this material and related documentation
+# without an express license agreement from NVIDIA CORPORATION or
+# its affiliates is strictly prohibited.
+
+[package]
+title = "AI Viewport Widget"
+description = "A Viewport for Generative AI"
+version = "1.0.0"
+category = "AI"
+authors = ["NVIDIA"]
+repository = ""
+keywords = ["window", "ui", "ai", "generation"]
+changelog = "docs/CHANGELOG.md"
+readme  = "docs/README.md"
+icon = "data/icon.png"
+preview_image = "data/preview.png"
+
+# publish to each platform & kit version separately
+writeTarget.platform = true
+writeTarget.kit = true
+
+[documentation]
+pages = [
+    "docs/CHANGELOG.md",
+]
+
+[settings.exts."omni.ai.viewport.widget"]
+preview_image = "coffee_machine_0.png"
+
+[dependencies]
+"omni.ui" = {}
+"omni.kit.menu.utils" = {}
+"omni.kit.window.popup_dialog" = {}
+"omni.kit.window.filepicker" = {}
+"omni.ai.viewport.core" = {}
+
+[[python.module]]
+name = "omni.ai.viewport.widget"

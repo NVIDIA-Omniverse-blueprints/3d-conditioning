@@ -1,0 +1,9 @@
+[submodule "kit-streamer/third_party/better_profanity"]
+	path = kit-streamer/third_party/better_profanity
+	url = https://github.com/snguyenthanh/better_profanity.git
+[submodule "kit-streamer/third_party/watchdog"]
+	path = kit-streamer/third_party/watchdog
+	url = https://github.com/gorakhargosh/watchdog.git
+[submodule "kit-streamer/third_party/websocket-client"]
+	path = kit-streamer/third_party/websocket-client
+	url = https://github.com/websocket-client/websocket-client.git
