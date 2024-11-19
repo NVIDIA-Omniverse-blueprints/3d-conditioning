@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 1.0.0
+description: Helm chart for 3D Conditioning for Precise Visual Generative AI Blueprint
+name: conditioning-for-precise-visual-generative-ai-helm
+type: application
+version: 1.0.0
+dependencies:
+- name: playground
+  version: 1.0.0
+- name: streamer
+  version: 1.0.0
+- name: image-uplift
+  version: 1.0.0

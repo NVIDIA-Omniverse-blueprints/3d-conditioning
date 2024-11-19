@@ -1,0 +1,21 @@
+# Documentation: https://docs.codecov.com/docs/codecov-yaml
+
+codecov:
+  # Avoid "Missing base report" due to committing CHANGES.rst with "[CI skip]"
+  # https://github.com/codecov/support/issues/363
+  # https://docs.codecov.com/docs/comparing-commits
+  allow_coverage_offsets: true
+
+comment: false
+
+coverage:
+  status:
+    project:
+      default:
+        threshold: 0.1%
+
+# Matches 'omit:' in .coveragerc
+ignore:
+  - "Tests/32bit_segfault_check.py"
+  - "Tests/check_*.py"
+  - "Tests/createfontdatachunk.py"

@@ -1,0 +1,192 @@
+########################################################################################################################
+# Repo tool base settings
+########################################################################################################################
+
+[repo]
+# Use Kit Template repo configuration as a base. Only override things specific to the repo.
+import_configs = [
+    # Shared config for all kit extensions repos
+    "${root}/_repo/deps/repo_kit_tools/kit-template/repo.toml",
+    # Shared config for kit extensions repos that also publish an app to the Launcher
+    "${root}/_repo/deps/repo_kit_tools/kit-template/repo-app.toml"
+]
+
+# Repository Name. It is used for solution name and final package name
+name = "kit-streamer"
+
+# Disable linbuild until we have a public image available.
+[repo_build.docker]
+enabled = false
+
+[repo_build.licensing]
+enabled = false
+
+[repo_build.fetch.pip]
+licensing_enabled = false
+
+# Do not try to publish a pip cache to S3
+publish_pip_cache = false
+
+[repo_build.msbuild]
+link_host_toolchain = true
+vs_version = "" # empty-string == automatch if possible
+
+[repo_build.build]
+enabled = true
+"platform:windows-x86_64".enabled = true
+
+
+########################################################################################################################
+# Test Runner
+########################################################################################################################
+
+[repo_test.suites.alltests]
+kind = "glob_and_exec"
+path = "${test_root}"
+
+# Run all test
+include = [
+    "tests-*${shell_ext}"
+]
+exclude = [
+    # exclude all apps by default
+    # note: if you develop an app that needs to be tested remove the following line
+    "tests-omni.app.*${shell_ext}"
+]
+
+# Disable certain tests for aarch64, see OM-87812 for details.
+"platform:linux-aarch64".exclude = [
+    "tests-omni.app.new_exts_demo_mini*",
+    "tests-omni.app.my_app*",
+]
+
+########################################################################################################################
+# Benchmarks
+########################################################################################################################
+
+[repo_bench.benchmarks.extension_benchmark]
+description = "Extension Benchmark"
+commands = [
+    [
+        '${root}/repo${shell_ext}', 'test', '--from-package', '--', '--benchmark',
+        '--/exts/omni.kit.test/testExtMaxParallelProcesses=1',
+        '--/exts/omni.kit.test/benchmarkFingerPrint/cpu_name="${cpu_name}"',
+        '--/exts/omni.kit.test/benchmarkFingerPrint/gpu_name="${gpu_name}"',
+    ]
+]
+
+########################################################################################################################
+# Extensions publisher
+########################################################################################################################
+
+[repo_publish_exts]
+
+# Extensions to publish, include and exclude among those discovered by kit. Wildcards are supported.
+exts.include = [
+]
+exts.exclude = []
+
+# verify before publishing
+publish_verification = true
+
+########################################################################################################################
+# Extensions precacher
+########################################################################################################################
+
+[repo_precache_exts]
+# Apps to run and precache
+apps = [
+    "${root}/source/apps/omni.app.conditioning_for_precise_visual_generative_ai.kit",
+    "${root}/source/apps/omni.app.conditioning_for_precise_visual_generative_ai_streaming.kit",
+]
+
+
+########################################################################################################################
+# Documentation building
+########################################################################################################################
+
+[repo_docs]
+
+# extension docs
+[repo_docs.kit]
+extensions = [
+]
+
+########################################################################################################################
+# Launcher publish and deploy
+########################################################################################################################
+
+[repo_deploy_launcher]
+enabled = true
+
+[repo_deploy_launcher.slack]
+enabled = false
+
+[repo_deploy_launcher.tokens]
+app_name = "My App"
+slug = "my_app"
+
+
+########################################################################################################################
+# Packaging
+########################################################################################################################
+
+[repo_package.packages.fat_package]
+root = "_build/$${platform}/$${config}"
+archive_name = "${conf:repo.name}-fat"
+# omniverse_flow_version_scheme sets package name to the format:
+# archive_name@{build_version}+{gitbranch}.{builder_id}.{githash}.{build_environment}.{host_platform}.{archive_format}
+# e.g. kit-app-template-thin@2024.1.0+custom-app-stuff.0.12345678.local.linux-x86_64.zip
+omniverse_flow_version_scheme=true
+package_per_config = true                   # By default we only build + package release.
+append_config = true                        # Set to true to append release/debug config to package name.
+archive_format = "zip"                      # We support "7z", "zip", "tar.gz", "tar.bz2"
+#build_version = "${file:${config_root}/tools/VERSION.md}"  # It's ignored when omniverse_flow_version_scheme is true
+
+files = [
+    ["**"],
+]
+files_exclude = [
+    ["_*/**"],
+    [".*/**"],
+    ["**/*.pdb"],
+    ["**/*.exp"],
+    ["baseapp/**"],
+    ["extsbuild/**"],
+    ["cache/**"],
+    ["data/**"],
+    ["logs/**"],
+    ["apps/kit.portable"],
+    ["**/__pycache__"],
+]
+"linux-x86_64".files_strip = []
+
+
+[repo_package.packages.thin_package]
+root = "_build/$${platform}/$${config}"
+archive_name = "${conf:repo.name}-thin"
+omniverse_flow_version_scheme=true
+package_per_config = true
+append_config = true
+archive_format = "zip"
+#build_version = "${file:${config_root}/tools/VERSION.md}"
+
+files = [
+    ["**"],
+]
+files_exclude = [
+    ["_*/**"],
+    [".*/**"],
+    ["**/*.pdb"],
+    ["**/*.exp"],
+    ["kit/**"],
+    ["extscache/**"],
+    ["extsbuild/**"],
+    ["baseapp/**"],
+    ["cache/**"],
+    ["data/**"],
+    ["logs/**"],
+    ["apps/kit.portable"],
+    ["**/__pycache__"],
+]
+"linux-x86_64".files_strip = []

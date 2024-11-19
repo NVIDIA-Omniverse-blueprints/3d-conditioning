@@ -1,0 +1,94 @@
+name: Run Sage CI for Linux
+
+## This GitHub Actions workflow provides:
+##
+##  - portability testing, by building and testing this project on many platforms
+##
+##  - continuous integration, by building and testing other software
+##    that depends on this project.
+##
+## It runs on every push of a tag to the GitHub repository.
+##
+## The testing can be monitored in the "Actions" tab of the GitHub repository.
+##
+## After all jobs have finished (or are canceled) and a short delay,
+## tar files of all logs are made available as "build artifacts".
+##
+## This GitHub Actions workflow uses the portability testing framework
+## of SageMath (https://www.sagemath.org/).  For more information, see
+## https://doc.sagemath.org/html/en/developer/portability_testing.html
+
+## The workflow consists of two jobs:
+##
+##  - First, it builds a source distribution of the project
+##    and generates a script "update-pkgs.sh".  It uploads them
+##    as a build artifact named upstream.
+##
+##  - Second, it checks out a copy of the SageMath source tree.
+##    It downloads the upstream artifact and replaces the project's
+##    package in the SageMath distribution by the newly packaged one
+##    from the upstream artifact, by running the script "update-pkgs.sh".
+##    Then it builds a small portion of the Sage distribution.
+##
+## Many copies of the second step are run in parallel for each of the tested
+## systems/configurations.
+
+on:
+  push:
+    tags:
+      - '*'
+  pull_request:
+    paths:
+      - .github/workflows/ci-sage.yml
+  workflow_dispatch:
+    # Allow to run manually
+
+permissions:
+  contents: read
+
+env:
+  # Ubuntu packages to install so that the project's "setup.py sdist" can succeed
+  DIST_PREREQ: python3
+  # Name of this project in the Sage distribution
+  SPKG:        setuptools
+
+jobs:
+
+  dist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out ${{ env.SPKG }}
+        uses: actions/checkout@v4
+        with:
+          path: build/pkgs/${{ env.SPKG }}/src
+      - name: Install prerequisites
+        run: |
+          sudo DEBIAN_FRONTEND=noninteractive apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install $DIST_PREREQ
+          python3 -m pip install build
+      - name: Run make dist, prepare upstream artifact
+        run: |
+          (cd build/pkgs/${{ env.SPKG }}/src && python3 -m build --sdist) \
+          && mkdir -p upstream && cp build/pkgs/${{ env.SPKG }}/src/dist/*.tar.gz upstream/${{ env.SPKG }}-git.tar.gz \
+          && echo "sage-package create ${{ env.SPKG }} --pypi --source normal --type standard; sage-package create ${{ env.SPKG }} --version git --tarball ${{ env.SPKG }}-git.tar.gz --type=standard" > upstream/update-pkgs.sh \
+          && if [ -n "${{ env.REMOVE_PATCHES }}" ]; then echo "(cd ../build/pkgs/${{ env.SPKG }}/patches && rm -f ${{ env.REMOVE_PATCHES }}; :)" >> upstream/update-pkgs.sh; fi \
+          && ls -l upstream/
+      - uses: actions/upload-artifact@v3
+        with:
+          path: upstream
+          name: upstream
+
+  linux:
+    # https://github.com/sagemath/sage/blob/develop/.github/workflows/docker.yml
+    uses: sagemath/sage/.github/workflows/docker.yml@develop
+    with:
+      # Sage distribution packages to build
+      targets: setuptools pyzmq
+      # Standard setting: Test the current beta release of Sage:
+      sage_repo: sagemath/sage
+      sage_ref: develop
+      upstream_artifact: upstream
+      # We prefix the image name with the SPKG name ("setuptools-") to avoid the error
+      # 'Package "sage-docker-..." is already associated with another repository.'
+      docker_push_repository: ghcr.io/${{ github.repository }}/setuptools-
+    needs: [dist]

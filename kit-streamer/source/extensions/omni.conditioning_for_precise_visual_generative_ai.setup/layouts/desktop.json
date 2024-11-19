@@ -1,0 +1,67 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "dock_id": 3,
+                "dock_tab_bar_enabled": false,
+                "dock_tab_bar_visible": false,
+                "height": 640,
+                "position_x": 0.0,
+                "position_y": 26.0,
+                "selected_in_dock": true,
+                "title": "Viewport",
+                "visible": true,
+                "width": 640
+              }
+            ],
+            "dock_id": 3,
+            "position": "TOP"
+          },
+          {
+            "children": [
+              {
+                "dock_id": 4,
+                "dock_tab_bar_enabled": false,
+                "dock_tab_bar_visible": false,
+                "height": 640,
+                "position_x": 0.0,
+                "position_y": 640,
+                "selected_in_dock": true,
+                "title": "Viewport AI Widget for Input",
+                "visible": true,
+                "width": 640
+              }
+            ],
+            "dock_id": 4,
+            "position": "BOTTOM"
+          }
+        ],
+        "dock_id": 1,
+        "position": "LEFT"
+      },
+      {
+        "children": [
+          {
+            "dock_id": 2,
+            "dock_tab_bar_enabled": false,
+            "dock_tab_bar_visible": false,
+            "height": 640,
+            "position_x": 0,
+            "position_y": 0,
+            "selected_in_dock": true,
+            "title": "Viewport AI Widget for Output",
+            "visible": true,
+            "width": 640
+          }
+        ],
+        "dock_id": 2,
+        "position": "RIGHT"
+      }
+    ],
+    "dock_id": 3358485147
+  }
+]

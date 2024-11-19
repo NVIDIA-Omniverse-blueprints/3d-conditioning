@@ -1,0 +1,168 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Process: Attach (windows-x86_64)",
+            "type": "cppvsdbg",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        },
+		{
+            "name": "Python: Attach (windows-x86_64/linux-x86_64)",
+            "type": "python",
+            "request": "attach",
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "${workspaceFolder}",
+            "port": 3000,
+            "host": "localhost",
+            "subProcess": true,
+            "runtimeArgs": [
+                "--preserve-symlinks",
+                "--preserve-symlinks-main"
+            ]
+        },
+        {
+            "name": "omni.app.new_exts_demo (debug, windows-x86_64)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/_build/windows-x86_64/debug/kit/kit.exe",
+            "args": ["${workspaceFolder}/_build/windows-x86_64/debug/apps/omni.app.new_exts_demo.kit"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "name": "omni.app.new_exts_demo (release, windows-x86_64)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/_build/windows-x86_64/release/kit/kit.exe",
+            "args": ["${workspaceFolder}/_build/windows-x86_64/release/apps/omni.app.new_exts_demo.kit"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "name": "omni.app.new_exts_demo (debug, linux-x86_64)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/_build/linux-x86_64/debug/kit/kit",
+            "args": ["${workspaceFolder}/_build/linux-x86_64/debug/apps/omni.app.new_exts_demo.kit"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "internalConsole",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "sourceFileMap": {
+                "/build/glibc-OTsEL5/glibc-2.27": "/usr/src/glibc/glibc-2.27",
+                "/opt/rh/devtoolset-7/root": "/"
+            },
+        },
+        {
+            "name": "omni.app.new_exts_demo (release, linux-x86_64)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/_build/linux-x86_64/release/kit/kit",
+            "args": ["${workspaceFolder}/_build/linux-x86_64/release/apps/omni.app.new_exts_demo.kit"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "internalConsole",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "sourceFileMap": {
+                "/build/glibc-OTsEL5/glibc-2.27": "/usr/src/glibc/glibc-2.27",
+                "/opt/rh/devtoolset-7/root": "/"
+            },
+        },
+        {
+            "name": "omni.app.new_exts_demo_mini (debug, windows-x86_64)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/_build/windows-x86_64/debug/kit/kit.exe",
+            "args": ["${workspaceFolder}/_build/windows-x86_64/debug/apps/omni.app.new_exts_demo_mini.kit"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "name": "omni.app.new_exts_demo_mini (release, windows-x86_64)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/_build/windows-x86_64/release/kit/kit.exe",
+            "args": ["${workspaceFolder}/_build/windows-x86_64/release/apps/omni.app.new_exts_demo_mini.kit"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "name": "omni.app.new_exts_demo_mini (debug, linux-x86_64)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/_build/linux-x86_64/debug/kit/kit",
+            "args": ["${workspaceFolder}/_build/linux-x86_64/debug/apps/omni.app.new_exts_demo_mini.kit"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "sourceFileMap": {
+                "/build/glibc-OTsEL5/glibc-2.27": "/usr/src/glibc/glibc-2.27",
+                "/opt/rh/devtoolset-7/root": "/"
+            },
+        },
+        {
+            "name": "omni.app.new_exts_demo_mini (release, linux-x86_64)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/_build/linux-x86_64/release/kit/kit",
+            "args": ["${workspaceFolder}/_build/linux-x86_64/release/apps/omni.app.new_exts_demo_mini.kit"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "sourceFileMap": {
+                "/build/glibc-OTsEL5/glibc-2.27": "/usr/src/glibc/glibc-2.27",
+                "/opt/rh/devtoolset-7/root": "/"
+            },
+        },        
+    ]
+}

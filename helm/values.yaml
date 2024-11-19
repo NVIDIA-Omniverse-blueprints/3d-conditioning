@@ -1,0 +1,4 @@
+appName: conditioning-for-precise-visual-generative-ai-helm
+
+global:
+  imagePullSecretName: ""
