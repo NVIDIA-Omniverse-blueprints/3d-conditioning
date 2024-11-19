@@ -10,7 +10,7 @@ In this workflow guide, we outline how to create a system that allows users to q
 
 This guide includes:
 
-1. The standard workflow to replicate what is on the NIM Agent Blueprint web page.  
+1. The standard workflow to replicate what is on the NVIDIA Omniverse Blueprint web page.  
 2. Optional NIM that you could integrate on your own to further accelerate scene layout beyond the demonstration in the standard workflow guide.
 
 [NVIDIA NIM](https://www.nvidia.com/en-us/ai/) microservices are a set of accelerated inference microservices that allow developers to easily deploy AI models on NVIDIA GPUs anywhere.
@@ -381,7 +381,7 @@ In order to integrate NIM into your application, you will be making API calls to
 
 ### **Overview**
 
-ComfyUI as used in the context of this NIM Agent Blueprint helps teams articulate specific objects, and areas of a composition to target for prompts. ComfyUI is also used to ensure that hero assets used are not affected by any generative AI in the final image. By doing this, creators can  more accurately utilize generative AI.
+ComfyUI as used in the context of this NVIDIA Omniverse Blueprint helps teams articulate specific objects, and areas of a composition to target for prompts. ComfyUI is also used to ensure that hero assets used are not affected by any generative AI in the final image. By doing this, creators can  more accurately utilize generative AI.
 
 For the use of this generative AI image model, a Kit extension is created to present the user with some basic controls. This Kit extension handles the processing of the viewport for the appropriate buffers and masks and sends the information to the ComfyUI graph to prompt and process. The results are then composited and displayed back to the end user as a final image.
 
