@@ -138,7 +138,7 @@ The web front end displays the Kit streaming application hosted on a cloud serve
 *Required*
 
 **Manifest**  
-For this NIM Agent Blueprint, you need the following components:
+For this NVIDIA Omniverse Blueprint, you need the following components:
 
 | Component | Notes |
 | :---- | :---- |
@@ -154,7 +154,7 @@ For this NIM Agent Blueprint, you need the following components:
 
 ### **System Requirements**
 
-* See [NIM Agent Blueprint Card](https://build.nvidia.com/nvidia/conditioning-for-precise-visual-generative-ai/blueprintcard)
+* See [NVIDIA Omniverse Blueprint Card](https://build.nvidia.com/nvidia/conditioning-for-precise-visual-generative-ai/blueprintcard)
 
 ### **Required Software Dependencies**
 
@@ -320,7 +320,7 @@ Before getting started with the Kit template defined here, ensure your developme
 
 *Image generated with live interactive demo.*
 
-To replicate the functionality as experienced on [NIM Agent Blueprints](https://build.nvidia.com/nim/agent-blueprints), you'll need to add extensions to the custom app built from kit-app-template. This part is already done for you and is part of the Blueprint download.  To replicate this on a fresh setup like above, you need to follow these steps.
+To replicate the functionality as experienced on [NVIDIA Omniverse Blueprints](https://build.nvidia.com/nim/agent-blueprints), you'll need to add extensions to the custom app built from kit-app-template. This part is already done for you and is part of the Blueprint download.  To replicate this on a fresh setup like above, you need to follow these steps.
 
 
 1. Open the `{full-path-kit-app-template}\source\apps` and copy the blueprint's apps that exist under the same path (e.g. `{full-path-blueprint-repo}\kit-streamer\source\apps`)
@@ -625,7 +625,7 @@ With Shutterstock's Generative 3D service, users can now simply describe the exa
 
 * You can try out the preview model directly on build.nvidia.com here: [NVIDIA NIM | edify-360-hdri-early-access](https://build.nvidia.com/shutterstock/edify-360-hdri-early-access)  
 * Developers can get API access here: [The Ultimate Generative 3D API ToolKit | Shutterstock](https://www.shutterstock.com/discover/generative-ai-3d)  
-* In this NIM Agent Blueprint, we have supplied example HDRI images for you to test with.
+* In this NVIDIA Omniverse Blueprint, we have supplied example HDRI images for you to test with.
 
   **Note** \- The Espresso Machine sample file includes two 360 HDRI images. Both were generated with  this NIM. You can switch between them in the interactive demo or the local kit app using the espresso machine configuration section. 
 
@@ -737,7 +737,7 @@ Read about how to use Action Graph to implement a focused orbit and zoom navigat
 
 *Optional* 
 
-In this NIM Agent Blueprint, content creators have flexibility in their layout. While traditional methods like using a content browser to drag and drop assets or moving assets with a manipulator are still available, the layout workflow can be enhanced using two NIM microservices.  
+In this NVIDIA Omniverse Blueprint, content creators have flexibility in their layout. While traditional methods like using a content browser to drag and drop assets or moving assets with a manipulator are still available, the layout workflow can be enhanced using two NIM microservices.  
 
 * **USD Search**: Expedites finding assets already in your asset library.  
 * **USD Code**: Helps you learn about USD, provides sample code, and allows layout modifications using natural language commands.
@@ -985,7 +985,7 @@ You should expect to see this output image after running the stub image generati
 
 # Known Issues and Limitations
 
-* ComfyUI requires you to acquire the needed elements of ComfyUI separately for the hosted components for NIM Agent Blueprints. These components are not supplied by NVIDIA.  
+* ComfyUI requires you to acquire the needed elements of ComfyUI separately for the hosted components for NVIDIA Omniverse Blueprints. These components are not supplied by NVIDIA.  
 * The generative AI image model used in this guide also requires you to acquire and add this on your own. This AI image model is not supplied by NVIDIA.
 * It is up to the developer to also add in any NSFW filtering for undesirable prompts.
 * 'Error: Prompt is invalid. Please enter new prompts and try again' may be due to the NSFW filter incorrectly flagging certain words in the customization prompts.
