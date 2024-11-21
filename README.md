@@ -243,7 +243,7 @@ Then, open another terminal or CMD, then build `kit-streamer` (instruction is in
      **Linux**: `./_build/linux-x86_64/release/omni.app.conditioning_for_precise_visual_generative_ai_desktop.sh`
      **Windows**: `_build\windows-x86_64\release\omni.app.conditioning_for_precise_visual_generative_ai_desktop.bat`
 
-You are expected to see [this image](#the-stub-image-generation-output) as an output.
+When you press the run button, you are expected to see [this image](#the-stub-image-generation-output) as an output.
 
 You can further modify the source code in their respective directories and locally test them.
 
@@ -517,11 +517,11 @@ ENTRYPOINT ["python", <COMFYUI_MAIN_PATH>, "--listen", <IP_ADDRESS>, "--port", <
 
 ### **Assigning Models and References**
 
+Now, your ComfyUI graph should look similar to the example shown below. Next, the models and image references in the green sections need to be assigned.
+
 This section demonstrates the manual set up of comfyUI with the example graph and images. The intent is to show where comfyUI operates in the workflow, to get an understanding of what the graph does internally and to play around with prompts and parameters.
 
 Ultimately, ComfyUI is connected to your Kit application and the output of that app is sent as masks and images to the graph.
-
-Now, your ComfyUI graph should look similar to the example shown below. Next, the models and image references in the green sections need to be assigned.
 
 ![][image10]
 
@@ -1024,6 +1024,7 @@ You should expect to see this output image after running the stub image generati
      * Or enable just for this cloned repository by running the command `git clone -c core.longpaths=true <repo-url>`
 * Advice on long file path error on Windows when copying over files
    * Install `7zip` or some zip applications to zip the files with long path issues, then unzip in on the target directory. This is a general workaround for avoiding the issue and copy files in Windows.
+* Some 'Access Denied' errors on Windows when following our instructions in a CMD can be resolved by elevating the CMD (running it on the Administrator mode).
 
 
 [image_ref]: <images/CAVA_Dia.png>
