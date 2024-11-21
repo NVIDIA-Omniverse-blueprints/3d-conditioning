@@ -442,18 +442,36 @@ ComfyUI is a powerful backend and GUI for building and executing pipelines using
       5. Once you have installed all node dependencies, click on the red **Restart** button at the bottom. This restarts the ComfyUI local server to enable the newly added dependencies. Note that you do not need to close the browser window, but a 'Reconnecting…' dialog is  displayed until the server has been restarted.  
       6. This first restart may take several minutes, downloading more dependencies as needed. You can always view the progress in the command line window.  
       7. After installing the dependencies, your graph should no longer display any bright red missing nodes.
-      8. You have to export `json` file by clicking 'Save (API Format)'. You may need to tick 'Dev mode Options' by clicking the Settings button on the top right (gear icon).
-          1. You need to hook the correct nodes to replace the image loaders - take a look at [this file](https://github.com/NVIDIA-Omniverse-blueprints/3d-conditioning/blob/main/kit-streamer/source/extensions/omni.ai.viewport.core/data/latest_workflow.json)
 
 ### **Configure the Image Generation Service**
 
 This step covers how to configure the image generation service with the ComfyUI Graph generated so far.
 
-1. After you have exported `json` file from [here](https://github.com/NVIDIA-Omniverse-blueprints/3d-conditioning/blob/main/kit-streamer/source/extensions/omni.ai.viewport.core/data/latest_workflow.json) via 'Save (API Format)' button, you should overwrite [this file](https://github.com/NVIDIA-Omniverse-blueprints/3d-conditioning/blob/main/kit-streamer/source/extensions/omni.ai.viewport.core/workflows/realtime_workflow_v3.json). If you have added/modified/removed input text or image nodes, you should make corresponding changes to the `.spec` file in the same directory manually to hook up the Kit application and the image generation service.
-2. Inspect the ComfyUI installation directory
+#### **Running ComfyUI Locally as an Example Service**
+
+To quickly reproduce the demo functionalities, you can leverage the ComfyUI that you already have.
+
+1. Import `json` file from [here](https://github.com/NVIDIA-Omniverse-blueprints/3d-conditioning/blob/main/kit-streamer/source/extensions/omni.ai.viewport.core/data/latest_workflow.json), then click on 'Save (API Format)' button. You may need to tick 'Dev mode Options' by clicking the Settings button on the top right (gear icon).
+2. Export to overwrite [this file](https://github.com/NVIDIA-Omniverse-blueprints/3d-conditioning/blob/main/kit-streamer/source/extensions/omni.ai.viewport.core/workflows/realtime_workflow_v3.json). 
+
+![][image_loader]
+
+* Notice that we are referring to `latest_workflow.json` instead of `latest_example.json` here. The difference between the two graphs is that the image loaders (bottom left one) are hooked up to nodes that receive image data from the Kit application (top left one). 
+
+* If you have added/modified/removed input text nodes or image loaders, you should make corresponding changes to the `.spec` file [here](https://github.com/NVIDIA-Omniverse-blueprints/3d-conditioning/blob/main/kit-streamer/source/extensions/omni.ai.viewport.core/workflows/realtime_workflow_v3.spec) manually to hook up the Kit application and the image generation service.
+
+* Don't forget to follow [this step](#connecting-the-kit-application-and-the-image-generation-service) on the Kit application.
+
+* If you are hitting any issues with path on model files or controlnet files, read [this section](#assigning-models-and-references).
+
+#### **Creating a Deployable Service**
+
+Follow this guide to take further steps to create a service that can be deployed in our [deployment section](#deployment). You may skip it for now if you not wish to deploy at the moment.
+
+1. Inspect the ComfyUI installation directory
    1. `custom_nodes` contains the nodes you need to include in your service
    2. `models` contains the diffusion models and/or controlnet that you need to include in your service
-3. We recommend you modify existing `imagegen_stub` directory to quickly come up with working service
+2. We recommend you modify existing `imagegen_stub` directory to quickly come up with working service
    1. Modify the dockerfile to install essential packages to install Python3.10 or higher, pip, git, git lfs and wget
    2. `git clone` ComfyUI (you may prefer to pin the commit by `git checkout <COMMIT_HASH>`)
    3. `cd` into `custom_nodes` directory and `git clone` all the nodes with pinning
@@ -496,7 +514,12 @@ EXPOSE <PORT>
 ENTRYPOINT ["python", <COMFYUI_MAIN_PATH>, "--listen", <IP_ADDRESS>, "--port", <PORT>]
 ```
 
+
 ### **Assigning Models and References**
+
+This section demonstrates the manual set up of comfyUI with the example graph and images. The intent is to show where comfyUI operates in the workflow, to get an understanding of what the graph does internally and to play around with prompts and parameters.
+
+Ultimately, ComfyUI is connected to your Kit application and the output of that app is sent as masks and images to the graph.
 
 Now, your ComfyUI graph should look similar to the example shown below. Next, the models and image references in the green sections need to be assigned.
 
@@ -977,6 +1000,8 @@ The Kit application queries the image generation service and receives image as o
 
 <img src="images/extension_toml.png" width="400">
 
+Make sure that only one `server_address` is enabled. For instance, if you were to use the `local version`, double check to make sure that those under the other versions are disabled with `#`.
+
 # The Stub Image Generation Output
 
 You should expect to see this output image after running the stub image generation.
@@ -989,6 +1014,16 @@ You should expect to see this output image after running the stub image generati
 * The generative AI image model used in this guide also requires you to acquire and add this on your own. This AI image model is not supplied by NVIDIA.
 * It is up to the developer to also add in any NSFW filtering for undesirable prompts.
 * 'Error: Prompt is invalid. Please enter new prompts and try again' may be due to the NSFW filter incorrectly flagging certain words in the customization prompts.
+
+# Troubleshooting Guide
+
+* Cloning the Repository
+   * Long file name error: You may receive an error when cloning the repository that file names are too long. To fix this issue, please try either of the following -
+     * Start `Git Bash` as Administrator
+     * Run command `git config --system core.longpaths true`
+     * Or enable just for this cloned repository by running the command `git clone -c core.longpaths=true <repo-url>`
+* Advice on long file path error on Windows when copying over files
+   * Install `7zip` or some zip applications to zip the files with long path issues, then unzip in on the target directory. This is a general workaround for avoiding the issue and copy files in Windows.
 
 
 [image_ref]: <images/CAVA_Dia.png>
@@ -1013,14 +1048,4 @@ You should expect to see this output image after running the stub image generati
 [image_controlnet]: <images\controlnet.png>
 [image_in_out]: <images/espresso_input_output.png>
 [image_controlnet_weights]: <images\controlnet_weights.png>
-
-
-
-# Troubleshooting Guide
-
-* Cloning the Repository
-   * Long file name error: You may receive an error when cloning the repository that file names are too long. To fix this issue, please try either of the following -
-     * Start `Git Bash` as Administrator
-     * Run command `git config --system core.longpaths true`
-     * Or enable just for this cloned repository by running the command `git clone -c core.longpaths=true <repo-url>`
-
+[image_loader]: <images/image_loader.png>
