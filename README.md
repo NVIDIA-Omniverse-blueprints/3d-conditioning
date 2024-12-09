@@ -178,7 +178,7 @@ NIM APIs can be found on the [NVIDIA API Catalog](https://build.nvidia.com/explo
 ### **Get API Key**
 
 1. Get your NVIDIA API key.  
-   1. Go to the [NVIDIA API Catalog](https://build.ngc.nvidia.com/explore/).  
+   1. Go to the [NVIDIA API Catalog](https://build.nvidia.com).  
    2. Select any model.  
    3. Click **Get API Key**.
 
