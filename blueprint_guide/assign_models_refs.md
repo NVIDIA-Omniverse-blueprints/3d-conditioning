@@ -58,7 +58,7 @@ Ultimately, ComfyUI is connected to your Kit application and the output of that 
 
 If you are interested in learning more about the ComfyUI graph, go to the next section [Augmentation Graph Breakdown](./graph_breakdown.md)
 
-Or skip to the section []
+Or skip to the section [Connecting the Kit App & Image Generation Service](./connect_comfyui_app.md).
 
 
 ----

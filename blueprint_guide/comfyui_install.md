@@ -16,9 +16,9 @@ Estimated time to complete this section is ~20min depending on internet connecti
    2. **Windows** or **Linux** with a manual install, choose [method 1](https://github.com/ltdrdata/ComfyUI-Manager#installationmethod1-general-installation-method-comfyui-manager-only).  
 4. Download and install the required models and supporting files.  
    1. Download the RealVisXL_V4.0_Lightning model file  [RealVisXL_V4.0_Lightning.safetensors](https://huggingface.co/SG161222/RealVisXL_V4.0_Lightning/blob/main/RealVisXL_V4.0_Lightning.safetensors).   
-      1. Move the file to the ComfyUI installation folder under `ComfyUI\models\checkpoints\`.  
+      - Move the file to the ComfyUI installation folder under `ComfyUI\models\checkpoints\`.  
    2. Download the ControlNet Union model [diffusion\_pytorch\_model.safetensors](https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/blob/main/diffusion_pytorch_model.safetensors).  
-      1. Move the file to the ComfyUI installation folder under `ComfyUI\models\controlnet\`.  
+      - Move the file to the ComfyUI installation folder under `ComfyUI\models\controlnet\`.  
    3. Download or locate the example files provided for this workflow from the synthetic-data-examples on Github.  
       1. If you cloned this repository, the sample files can be found in the cloned repository file location under `{blueprint-repo/kit-streamer/source/extensions/omni.ai.viewport.core/data/sample_files}`
          1. OR download them directly here- [Sample files](https://github.com/NVIDIA-Omniverse-blueprints/3d-conditioning/blob/main/kit-streamer/source/extensions/omni.ai.viewport.core/data/sample_files)  

@@ -1,4 +1,4 @@
-# **Configure the Image Generation Service**
+# Configure the Image Generation Service
 
 This step covers how to configure the image generation service with the ComfyUI Graph generated from the [previous](./comfyui_graph_setup.md) section.
 
@@ -26,6 +26,6 @@ To quickly reproduce the demo functionalities, we have provided you with an exam
 * The graph should be automatically connected to the models and references but should you experience problems with running the queue or not sure how to run the queue, see the next section, [Assigning Models and References](./assign_models_refs.md)
 
 * If you can run the queue without issues, feel free to skip to the section, [Connecting the Kit Application and the Image Generation Service](./connect_comfyui_app.md)
-\
+
 ----
 <span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Assigning Models and References) &rarr;](./assign_models_refs.md)</span>

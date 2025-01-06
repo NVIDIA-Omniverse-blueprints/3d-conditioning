@@ -1,4 +1,4 @@
-## **Directable Background Generation with ComfyUI**
+# **Directable Background Generation with ComfyUI**
 
 *Required*
 

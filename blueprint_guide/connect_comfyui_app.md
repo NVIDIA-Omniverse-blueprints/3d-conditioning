@@ -4,7 +4,7 @@ The Kit application queries the image generation service and receives image as o
 
 <img src="../images/extension_toml.png" height=600>
 
-Make sure that only one server_address is enabled. For instance, if you were to use the local version, double check to make sure that those under the other versions are disabled with `#`.
+Make sure that only one `server_address` is enabled. For instance, if you were to use the local version, double check to make sure that those under the other versions are disabled with `#`.
 
 ----
 <span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Prompting Best Practices) &rarr;](./prompt_bp.md)</span>

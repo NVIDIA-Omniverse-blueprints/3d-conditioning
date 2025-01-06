@@ -1,5 +1,4 @@
-
-## **Set Up and Open the ComfyUI Graph Example**
+# **Set Up and Open the ComfyUI Graph Example**
 
 ComfyUI is a powerful backend and GUI for building and executing pipelines using diffusion models and more.
 
@@ -12,6 +11,7 @@ ComfyUI is a powerful backend and GUI for building and executing pipelines using
    4. When fully loaded ComfyUI  opens a window in your Internet browser with the local address '[http://127.0.0.1:8188/](http://127.0.0.1:8188/)'. This is connecting the visual frontend to the ComfyUI server now running in the background.  
 </br>
 2. #### Loading the example graph.  
+   > **NOTE:** This workflow is using ComfyUI legacy, you may see different UI than what is shown below in newer versions. 
    1. Next, 'Load' the file `latest_example.json` that was downloaded earlier from the example links. 
       1. Click the **Load** button on the ComfyUI menu. 
       2. Navigate to the location of the downloaded `.json` graph and open it.  
@@ -27,6 +27,7 @@ ComfyUI is a powerful backend and GUI for building and executing pipelines using
       4. Select **Install** for each of the listed node dependencies, or you can select the checkbox next to ID (upper left) to select them all, then select **Install**. These may take several minutes, depending on your Internet speed and hardware. You can check the progress of these downloads in ComfyUI's command line window.  
          <img src="../images/comfi_14.png" width=800>  
       5. Once you have installed all node dependencies, click on the red **Restart** button at the bottom. This restarts the ComfyUI local server to enable the newly added dependencies. 
+   
             > Note that you do not need to close the browser window, but a 'Reconnecting…' dialog is  displayed until the server has been restarted.  
       6. This first restart may take several minutes, downloading more dependencies as needed. You can always view the progress in the command line window.  
       7. After installing the dependencies, your graph will no longer display any bright red missing nodes and you can move to the next section.
