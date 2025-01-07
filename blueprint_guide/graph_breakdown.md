@@ -33,16 +33,19 @@ Let's explore the graph for a more complete understanding of how it works.
    1. The `Controlnet` models are used to constrain and inform guidance for the generation of the outputs. These are critical for the control of the structure of the outputs. Without these, the model would be free to imagine anything loosely based on the prompts, with no adherence to the exact placement of the objects in the scene.  
    2. We use 'Normals' and 'HED' (outlines) as the guides to help the model adhere to the structure of the input image.  
    3. The controlnet 'strength' values (shown in the image below) can be adjusted to relax the adherence to the normals and outlines. Lower values give the model more 'creative' freedom in what gets generated but may deviate from the shape and boundaries of the 3D scene.
+   
       <img src="../images/controlnet.png" width=800>
 
    4. We also create a weighted mask to guide the controlnet strength per mask. For example, the backsplash could have a low weighting, giving the model more creative freedom, while keeping the vase and plate at 1.0 so they closely follow the input controlnet images. The controlnet weights are set in the green sections at the top of the graph as shown below. 
+   
       <img src="../images/controlnet_weights.png" width=800>
 
 5. **Inpainting**  
    1. Inpainting (or outpainting) simply means generating a masked area inside or outside of an area that remains unchanged. In this case, the espresso machine is unchanged while the outer areas are generated.  
    
 6. **KSampler**  
-   1. This is the node that performs the work in the graph. It iteratively denoises the image over many steps until it completes.  
+   1. This is the node that performs the work in the graph. It iteratively denoises the image over many steps until it completes.
+     
       <img src="../images/comfi_03.png" width=800>
 
    2. When using different models, the steps, cfg, sampler\_name and schedulers should be tuned to get the best results. Details of the parameters and their functionality can be found [here](https://blenderneko.github.io/ComfyUI-docs/Core%20Nodes/Sampling/KSampler/).  
