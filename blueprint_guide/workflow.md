@@ -29,7 +29,7 @@ The standard workflow contains four key components:
 
 Follow this step-by-step guide to start your development journey with these new NVIDIA NIM microservices for generative AI development\!
 
-<img src="../images/cava_dia.png" width=600>
+<img src="../images/CAVA_Dia.png" width=600>
 
 To summarize the architectural workflow diagram above, we have 3 components 
 * Web Front-End 
