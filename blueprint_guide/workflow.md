@@ -39,5 +39,5 @@ To summarize the architectural workflow diagram above, we have 3 components
 The web front end displays the Kit streaming application hosted on a cloud server to the User through the App Streaming API and sends the text prompt created by the User. The Kit streaming application, created by a Developer, captures the viewport (RGB, Depth, Normal) and sends the merged data to the image generation service through a custom Kit extension, also created by a Developer. The image generation service processes the data (runs inference on a diffusion model and etc.) using Artist created assets, such as the Hero Asset, and generative AI to return a new 3D scene with the brand-accurate Hero Asset intact. The Kit streaming application updates with the processed scene and in return is displayed on the web front end in real time.
 
 ----
-| [&larr; Back to Guide](../README.md) |________________________________________________________________  | [Next (Get Started) &rarr;](./get_started.md) |
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Get Started) &rarr;](./get_started.md) |
 |-------------------------------|--|---------------------------------------------|
