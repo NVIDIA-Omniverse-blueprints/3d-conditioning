@@ -16,9 +16,9 @@ Here's how to add the necessary extensions to your custom application: </br>
    
 2. Copy all 3 of the blueprint's apps that exist in the apps folder of the Blueprint Repository to the applications folder of YOUR custom kit-app-template.
       1. First copy over the following application: `omni.app.conditioning_for_precise_visual_generative_ai.kit`
-      </br>
-      :exclamation: Do not change this file or the name of this. 
-      </br>
+   
+         :exclamation: Do not change this file or the name of this. 
+         </br>
 
       2. Then copy over `omni.app.conditioning_for_precise_visual_generative_ai_desktop.kit` and rename it to your app name (e.g., `my_company.my_editor.kit`)
       </br>
