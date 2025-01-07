@@ -7,7 +7,7 @@ This step covers how to configure the image generation service with the ComfyUI 
 To quickly reproduce the demo functionalities, we have provided you with an example ComfyUI graph,`latest_example.json`, which you downloaded in the section [ComfyUI Requirements & Installation](./comfyui_install.md).
 
 1. Import the `json` file into your ComfyUI.
-2. Click on `EXPORT (API)` option in the Workflow Tab. 
+2. Click on `Save (API Format)` or in newer versions it may view as `EXPORT (API)` option in the Workflow Tab. 
    </br>
     <img src="../images/exportAPI.png" width=400>
    >**Note:** You may need to enable 'Dev mode Options' in the Settings in the bottom left corner of the screen. 

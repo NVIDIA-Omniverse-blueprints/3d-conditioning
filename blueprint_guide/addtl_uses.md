@@ -11,7 +11,7 @@ By utilizing some simple scripts, we can automate the app locally to run a bunch
 
 <img src="../images/batchOutput.png" width="600">
 
-Steps (skip to part 2 if you wish to simply call the batch from your custom function or extension)
+Steps (skip to the last step below using Script Editor if you wish to simply call the batch from your custom function or extension)
 1. Modify the blueprint codebase to make menu bar visible
 
    1. Open `setup.py` file and edit:

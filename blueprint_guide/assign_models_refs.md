@@ -9,7 +9,7 @@ Ultimately, ComfyUI is connected to your Kit application and the output of that 
 <img src="../images/comfi_05.png" width=800>
 
 1. In the `Models` section locate the `Load Checkpoint` node.
-2. Assign `sd_xl_base_1.0.safetensors` model to the node by clicking on the highlighted section and select the mode from the popup list.
+2. Assign `RealVisXL_V4.0_Lightning.safetensors` model to the node by clicking on the highlighted section and select the mode from the popup list.
      >This must be done to refresh the assignment of the model. Even though it may show correctly, if not reassigned here, queueing a prompt later may create an error.
 
 3. Below the "Load Checkpoint" node, locate the node `Load Advanced ControlNet Model`.

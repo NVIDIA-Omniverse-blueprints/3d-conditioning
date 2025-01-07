@@ -13,8 +13,6 @@ The hero asset represents a final, digital version of a product. This could be a
 
 For this demonstration, the hero asset is configurable, meaning there are several variants built into the asset. It is not required to use a configurable asset; however, it is a common use case with several advantages. Having the hero asset as a configurable asset allows your end user to rapidly switch between different components, colors, and setups with just a push of a button. Leveraging OpenUSD, these configurable assets are easy to author and make it simple to build interactive applications. 
 
-**Download** the asset and unzip it to the location of your choice.
-
 ___
 
 This rest of the scene is constructed with the following layer composition structure:

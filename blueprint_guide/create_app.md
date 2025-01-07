@@ -55,7 +55,7 @@ Before getting started with the Kit template defined here, ensure your developme
 
    > **Note** Do not select `my_company.my_editor_streaming.kit`.
 
-   The initial startup may take 5 to 8 minutes as shaders compile for the first time. After initial shader compilation, startup time is  reduced.
+   The initial startup may take a few minutes to load the application and you will see a blank stage when fully loaded.
 
 
 ----
