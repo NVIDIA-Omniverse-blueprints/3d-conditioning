@@ -42,4 +42,5 @@ You can also reproduce the web version in the [Deployment subsection](./run_with
 
  > **NOTE:** If the desktop application's font size is too small, adjust the setting `app.font.size = 18` in the file `omni.app.conditioning_for_precise_visual_generative_ai_desktop.kit`
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Create Your Own App) &rarr;](./create_app.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Create Your Own App) &rarr;](./create_app.md)|
+|-------------------------------|--|---------------------------------------------|

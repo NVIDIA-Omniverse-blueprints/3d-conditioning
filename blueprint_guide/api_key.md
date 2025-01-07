@@ -42,4 +42,5 @@ The following instructions create a temporary environment variable to store your
       export NVIDIA_API_KEY="<YOUR_API_KEY>"  
       ```
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Create your Own App) &rarr;](./create_app.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Create your Own App) &rarr;](./create_app.md) |
+|-------------------------------|--|---------------------------------------------|

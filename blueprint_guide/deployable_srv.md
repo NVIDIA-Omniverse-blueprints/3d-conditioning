@@ -49,4 +49,5 @@ ENTRYPOINT ["python", <COMFYUI_MAIN_PATH>, "--listen", <IP_ADDRESS>, "--port", <
 ```
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Building Containers from Source) &rarr;](./containers_source.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Building Containers from Source) &rarr;](./containers_source.md)|
+|-------------------------------|--|---------------------------------------------|

@@ -16,4 +16,5 @@ If the desire is to have a custom front end, such as a web page with an embedded
 
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Deployment) &rarr;](./deployment.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Deployment) &rarr;](./deployment.md)|
+|-------------------------------|--|---------------------------------------------|

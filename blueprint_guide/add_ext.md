@@ -70,4 +70,5 @@ You can read any of the `*.kit` files in your apps folder to see how extensions 
 
    > **Note** \- Use this same process to add your own custom extensions as you further develop your experience.
 ----
-   <span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Configure Extensions) &rarr;](./config_ext.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Configure Extensions) &rarr;](./config_ext.md) |
+|-------------------------------|--|---------------------------------------------|

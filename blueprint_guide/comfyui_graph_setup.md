@@ -33,4 +33,5 @@ ComfyUI is a powerful backend and GUI for building and executing pipelines using
       7. After installing the dependencies, your graph will no longer display any bright red missing nodes and you can move to the next section.
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (ComfyUI Configure Image Gen Service) &rarr;](./config_img_srv.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (ComfyUI Configure Image Gen Service) &rarr;](./config_img_srv.md) |
+|-------------------------------|--|---------------------------------------------|

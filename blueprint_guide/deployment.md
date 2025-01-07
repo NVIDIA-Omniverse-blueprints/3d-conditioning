@@ -44,4 +44,5 @@ microk8s kubectl logs -f streamer-698dc4687d-xcwtq
 ```
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Deployable Service) &rarr;](./deployable_srv.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Deployable Service) &rarr;](./deployable_srv.md)|
+|-------------------------------|--|---------------------------------------------|

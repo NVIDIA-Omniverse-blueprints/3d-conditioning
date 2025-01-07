@@ -20,4 +20,5 @@ The following integrations are used in this section:
 In the next section you will begin the process of working with ComfyUI. 
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (ComfyUI Requirements & Install) &rarr;](./comfyui_install.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (ComfyUI Requirements & Install) &rarr;](./comfyui_install.md)|
+|-------------------------------|--|---------------------------------------------|

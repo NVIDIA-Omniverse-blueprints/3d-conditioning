@@ -16,4 +16,5 @@ Read about how to use Action Graph to implement a focused orbit and zoom navigat
 *Also note that Action Graph is not the only means to modify navigation. Navigation can be modified through Python.*
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Messaging for Web Based Front End) &rarr;](./messaging_web.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Messaging for Web Based Front End) &rarr;](./messaging_web.md)|
+|-------------------------------|--|---------------------------------------------|

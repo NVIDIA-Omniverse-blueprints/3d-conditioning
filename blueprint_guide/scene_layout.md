@@ -33,4 +33,5 @@ Ask **USD Code** NIM to place the espresso machine on top of the kitchen counter
 
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Augment the Content Library with Edify) &rarr;](./content_library.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Augment the Content Library with Edify) &rarr;](./content_library.md)|
+|-------------------------------|--|---------------------------------------------|

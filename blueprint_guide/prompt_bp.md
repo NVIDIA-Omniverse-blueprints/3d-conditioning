@@ -16,4 +16,5 @@ Keeping Prompts to 3-5 phrases generally is recommended to yield the best result
 
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Add Other NIMs) &rarr;](./opt_nims.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Add Other NIMs) &rarr;](./opt_nims.md)|
+|-------------------------------|--|---------------------------------------------|

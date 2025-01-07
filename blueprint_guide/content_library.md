@@ -13,4 +13,5 @@ As a developer, you can integrate Edify 3D to generate assets that can be used i
 5. **Position and transform**. Use USD Code to place and transform the assets within the scene.
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Scene Structure & Assets) &rarr;](./scene_struc.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Scene Structure & Assets) &rarr;](./scene_struc.md)|
+|-------------------------------|--|---------------------------------------------|

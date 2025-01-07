@@ -50,4 +50,5 @@ Sample CSV file
 | Analog | Black | Glass Mug | Lighting 2 | cool winter morning | add cheese cubes to the plate | cookie jar | dark brown cutting board with a block of cheese on it | "butcher block counter top, white cabinets, dark metal cabinet handles and knobs, large silver back splash tiles with ornate pattern" |
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Improved Lighting) &rarr;](./improve_lighting.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Improved Lighting) &rarr;](./improve_lighting.md) |
+|-------------------------------|--|---------------------------------------------|

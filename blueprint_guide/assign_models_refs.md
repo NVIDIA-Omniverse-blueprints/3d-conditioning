@@ -62,4 +62,5 @@ Or skip to the section [Connecting the Kit App & Image Generation Service](./con
 
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Augmentation Graph Breakdown) &rarr;](./graph_breakdown.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Augmentation Graph Breakdown) &rarr;](./graph_breakdown.md) |
+|-------------------------------|--|---------------------------------------------|

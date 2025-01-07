@@ -7,4 +7,5 @@
 5. Now the hero asset should have nicer reflections baked in.
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Reuse Masks) &rarr;](./reuse_masks.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Reuse Masks) &rarr;](./reuse_masks.md)|
+|-------------------------------|--|---------------------------------------------|

@@ -32,5 +32,8 @@ For this NVIDIA Omniverse Blueprint, you need the following components:
 ### **Recommended Software**
 
 * VS Code (or your preferred IDE): For code editing and development.
+  
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (API Key) &rarr;](./api_key.md)</span>
+
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (API Key) &rarr;](./api_key.md)|
+|-------------------------------|--|---------------------------------------------|

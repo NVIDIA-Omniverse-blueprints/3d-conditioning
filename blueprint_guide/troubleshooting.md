@@ -11,4 +11,5 @@
 
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     
+
+| [&larr; Back to Guide](../README.md) |

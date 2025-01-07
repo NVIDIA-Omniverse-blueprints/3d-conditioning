@@ -26,4 +26,5 @@ Estimated time to complete this section is ~20min depending on internet connecti
          1. OR download directly here - [latest_example.json](https://github.com/NVIDIA-Omniverse-blueprints/3d-conditioning/blob/main/kit-streamer/source/extensions/omni.ai.viewport.core/data/latest_example.json)
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (ComfyUI Graph Setup) &rarr;](./comfyui_graph_setup.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (ComfyUI Graph Setup) &rarr;](./comfyui_graph_setup.md) |
+|-------------------------------|--|---------------------------------------------|

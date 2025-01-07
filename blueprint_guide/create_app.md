@@ -61,4 +61,5 @@ Before getting started with the Kit template defined here, ensure your developme
 
    > **NOTE:** If the desktop application's font size is too small, adjust the `app.font.size = 18` in the `omni.app.conditioning_for_precise_visual_generative_ai_desktop.kit`
 ----
-   <span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Add Extensions) &rarr;](./add_ext.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Add Extensions) &rarr;](./add_ext.md)|
+|-------------------------------|--|---------------------------------------------|

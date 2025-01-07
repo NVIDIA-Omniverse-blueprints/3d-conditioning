@@ -19,4 +19,5 @@ In order to integrate NIM into your application, you will be making API calls to
 The first part of this workflow is to integrate the Image Generation Service using ComfyUI, please see the next section to get started. 
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (ComfyUI) &rarr;](./comfyui.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (ComfyUI) &rarr;](./comfyui.md)|
+|-------------------------------|--|---------------------------------------------|

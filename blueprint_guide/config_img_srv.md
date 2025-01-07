@@ -28,4 +28,5 @@ To quickly reproduce the demo functionalities, we have provided you with an exam
 * If you can run the queue without issues, feel free to skip to the section, [Connecting the Kit Application and the Image Generation Service](./connect_comfyui_app.md)
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Assigning Models and References) &rarr;](./assign_models_refs.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Assigning Models and References) &rarr;](./assign_models_refs.md)|
+|-------------------------------|--|---------------------------------------------|

@@ -65,4 +65,5 @@ This is just a basic outline of how this example of ComfyUI's graph works. The s
 
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Connecting the Kit App & Image Generation Service ) &rarr;](./connect_comfyui_app.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Connecting the Kit App & Image Generation Service ) &rarr;](./connect_comfyui_app.md)|
+|-------------------------------|--|---------------------------------------------|

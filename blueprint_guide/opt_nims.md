@@ -51,4 +51,5 @@ Learn more below in the [Scene Layout with NIM](./scene_layout.md) section.
 
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Scene Layout with NIM)](./scene_layout.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Scene Layout with NIM)](./scene_layout.md)|
+|-------------------------------|--|---------------------------------------------|

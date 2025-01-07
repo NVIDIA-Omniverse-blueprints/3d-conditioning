@@ -7,4 +7,5 @@ You may want to alter the set up to help render the hero asset seat into the sce
 *Image generated with live interactive demo.*
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Render Additional Passes) &rarr;](./render_passes.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Render Additional Passes) &rarr;](./render_passes.md)|
+|-------------------------------|--|---------------------------------------------|

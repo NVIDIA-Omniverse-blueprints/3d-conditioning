@@ -13,4 +13,5 @@ Alternatively, you can run the **Kit application** and the **image generation se
 
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Additional Usage) &rarr;](./addtl_uses.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Additional Usage) &rarr;](./addtl_uses.md)|
+|-------------------------------|--|---------------------------------------------|

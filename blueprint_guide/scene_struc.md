@@ -59,4 +59,5 @@ To learn more about how to assemble a configurable hero asset, see the authoring
 Best Practices for authoring variants can be found [here](https://docs.omniverse.nvidia.com/auto-config/latest/asset-authoring/new-variant-sets.html#).
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Scene Navigation With ActionGraph) &rarr;](./scene_nav.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Scene Navigation With ActionGraph) &rarr;](./scene_nav.md)|
+|-------------------------------|--|---------------------------------------------|

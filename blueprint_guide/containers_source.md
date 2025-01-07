@@ -38,4 +38,5 @@ To build containers, users need to have access to the docker images repository.
 
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Run Locally without Kubernetes) &rarr;](./run_without_kubernetes.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Run Locally without Kubernetes) &rarr;](./run_without_kubernetes.md)|
+|-------------------------------|--|---------------------------------------------|

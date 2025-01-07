@@ -6,4 +6,5 @@
 * 'Error: Prompt is invalid. Please enter new prompts and try again' may be due to the NSFW filter incorrectly flagging certain words in the customization prompts.
 
 ----
-<span style="float:left;">[&larr; Back to Guide](../README.md)</span>                     <span style="float: right;">[Next (Troubleshooting) &rarr;](./troubleshooting.md)</span>
+| [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Troubleshooting) &rarr;](./troubleshooting.md)|
+|-------------------------------|--|---------------------------------------------|
