@@ -54,15 +54,18 @@ Let's explore the graph for a more complete understanding of how it works.
    1. This simply decodes the image from latent space, composites the masked espresso machine back in, and saves the result.
 
 
+___
 ### Normal Map and Outline (HED) Controlnets
 
-    Controlnets use images to guide the model's outputs. In the example we use normal maps, and outlines. This helps the model maintain the shapes of the geometry in the scene, and ‘understand’ edges and discontinuities and object bounds.
+   Controlnets use images to guide the model's outputs. In the example we use normal maps, and outlines. This helps the model maintain the shapes of the geometry in the scene, and ‘understand’ edges and discontinuities and object bounds.
 
-    Controlnets are an incredible tool for constraining models but they can come at the expense of model creativity or visual realism.
+   Controlnets are an incredible tool for constraining models but they can come at the expense of model creativity or visual realism.
 
-    If you want to make the ‘plate’ into a bagel, you’re asking the model to do two conflicting things, because the shape of the normals and outline controlnets is trying to adhere to a plate shape. The strength of the controlnets can be modified in the graph section “Controlnet Weights”. The resulting weight image is displayed in the controlnet section (section 4). Lowering the weight of the ‘plate’ region will free the model up to generate different objects of different shapes and sizes.
+   If you want to make the ‘plate’ into a bagel, you’re asking the model to do two conflicting things, because the shape of the normals and outline controlnets is trying to adhere to a plate shape. The strength of the controlnets can be modified in the graph section “Controlnet Weights”. The resulting weight image is displayed in the controlnet section (section 4). Lowering the weight of the ‘plate’ region will free the model up to generate different objects of different shapes and sizes.
 
-    Using Controlnets is a balance between control and creativity. Some experimentation can be needed to find the sweet spot.
+   Using Controlnets is a balance between control and creativity. Some experimentation can be needed to find the sweet spot.
+
+___
 
 This is just a basic outline of how this example of ComfyUI's graph works. The specifics can vary depending on the model, the prompts, the image, and the settings used.
 
