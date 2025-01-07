@@ -52,14 +52,12 @@ Before getting started with the Kit template defined here, ensure your developme
 
 8. Select with arrow keys which application would you like to launch. For example, `my_company.my_editor.kit`
 
-   You are expected to see the following image as an output: </br>
-   <img src="../images/stub.png" width=300>
 
    > **Note** Do not select `my_company.my_editor_streaming.kit`.
 
    The initial startup may take 5 to 8 minutes as shaders compile for the first time. After initial shader compilation, startup time is  reduced.
 
-   > **NOTE:** If the desktop application's font size is too small, adjust the `app.font.size = 18` in the `omni.app.conditioning_for_precise_visual_generative_ai_desktop.kit`
+
 ----
 | [&larr; Back to Guide](../README.md) |___________________________________________________________________________  | [Next (Add Extensions) &rarr;](./add_ext.md)|
 |-------------------------------|--|---------------------------------------------|

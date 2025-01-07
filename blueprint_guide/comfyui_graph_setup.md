@@ -4,14 +4,16 @@ ComfyUI is a powerful backend and GUI for building and executing pipelines using
 
 <img src="../images/comfi_07.png" width=600>
 
-1. #### Run ComfyUI.  
+1. Run ComfyUI.  
    1. Windows Portable \- Run `ComfyUI_windows_portable\run_nvidia_gpu.bat`  
    2. Windows and Linux Manual Install \- Using the command line, run `python main.py`  
    3. The ComfyUI server process runs in a command line window. There, you can view what ComfyUI is doing if you need to check for errors, warnings, or to see the progress of image generations.  
    4. When fully loaded ComfyUI  opens a window in your Internet browser with the local address '[http://127.0.0.1:8188/](http://127.0.0.1:8188/)'. This is connecting the visual frontend to the ComfyUI server now running in the background.  
 </br>
-2. #### Loading the example graph.  
+1. Loading the example graph.  
+   
    > **NOTE:** This workflow is using ComfyUI legacy, you may see different UI than what is shown below in newer versions. 
+   
    1. Next, 'Load' the file `latest_example.json` that was downloaded earlier from the example links. 
       1. Click the **Load** button on the ComfyUI menu. 
       2. Navigate to the location of the downloaded `.json` graph and open it.  
