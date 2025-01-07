@@ -15,15 +15,18 @@ Here's how to add the necessary extensions to your custom application: </br>
 1. Open the file location where you saved/cloned this repository and navigate to the applications folder, e.g: `{full-path-kit-app-template}\source\apps` </br>
    
 2. Copy all 3 of the blueprint's apps that exist in the apps folder of the Blueprint Repository to the applications folder of YOUR custom kit-app-template.
-   1. First copy over the following application: `omni.app.conditioning_for_precise_visual_generative_ai.kit`
-   </br>
-   :exclamation: Do not change this file or the name of this. 
-   </br>
-   2. Then copy over `omni.app.conditioning_for_precise_visual_generative_ai_desktop.kit` and rename it to your app name (e.g., `my_company.my_editor.kit`)
-   </br>
-   3. Do the same for the application `omni.app.conditioning_for_precise_visual_generative_ai_streaming.kit` </br>
-   (e.g., `my_company.my_editor_streaming.kit`)
-   </br>
+      1. First copy over the following application: `omni.app.conditioning_for_precise_visual_generative_ai.kit`
+      </br>
+      :exclamation: Do not change this file or the name of this. 
+      </br>
+
+      2. Then copy over `omni.app.conditioning_for_precise_visual_generative_ai_desktop.kit` and rename it to your app name (e.g., `my_company.my_editor.kit`)
+      </br>
+
+      3. Do the same for the application `omni.app.conditioning_for_precise_visual_generative_ai_streaming.kit` </br>
+      (e.g., `my_company.my_editor_streaming.kit`)
+      </br>
+
    > At the end of this step you should have 3 applications in YOUR custom kit-app-template.</br>
    >1. `omni.app.conditioning_for_precise_visual_generative_ai.kit`
    >2. `my_company.my_editor.kit` 
