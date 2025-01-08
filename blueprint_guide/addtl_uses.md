@@ -14,12 +14,12 @@ By utilizing some simple scripts, we can automate the app locally to run a bunch
 Steps (skip to the last step below using Script Editor if you wish to simply call the batch from your custom function or extension)
 1. Modify the blueprint codebase to make menu bar visible
 
-   1. Open `setup.py` file and edit:
+   1. Open [setup.py file](https://github.com/NVIDIA-Omniverse-blueprints/3d-conditioning/blob/markdown_edits/kit-streamer/source/extensions/omni.conditioning_for_precise_visual_generative_ai.setup/omni/conditioning_for_precise_visual_generative_ai/setup/setup.py) and edit:
       ```
       main_menu_bar.visible = True
       ```
 
-   2. Open `extension.toml` file and edit:
+   2. Open [extension.toml](https://github.com/NVIDIA-Omniverse-blueprints/3d-conditioning/blob/markdown_edits/kit-streamer/source/extensions/omni.conditioning_for_precise_visual_generative_ai.setup/config/extension.toml) file and edit:
       ```
       [settings.exts."omni.conditioning_for_precise_visual_generative_ai.setup"]
       menu_visible = true

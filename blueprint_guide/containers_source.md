@@ -4,7 +4,7 @@ We also provide sources for certain containers, allowing users to experiment wit
 To build containers, users need to have access to the docker images repository.
 
 ### Steps:
-1. Before pushing containers, login into the desired repository. For the `nvcr.io` repository, it will look like this (assuming **env var** `NGC_CLI_API_KEY` is set to the proper NGC key, refer to this NGC document for details):
+1. Before pushing containers, login into the desired repository. For the `nvcr.io` repository, it will look like this (assuming **env var** `NGC_CLI_API_KEY` is set to the proper NGC key, refer to this [NGC document](https://org.ngc.nvidia.com/setup) for details):
    ```
    docker login nvcr.io -u "\$oauthtoken" -p $NGC_CLI_API_KEY
    ```
