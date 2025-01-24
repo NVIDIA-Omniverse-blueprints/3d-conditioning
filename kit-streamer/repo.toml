@@ -28,12 +28,12 @@ licensing_enabled = false
 publish_pip_cache = false
 
 [repo_build.msbuild]
-link_host_toolchain = true
+link_host_toolchain = false
 vs_version = "" # empty-string == automatch if possible
 
 [repo_build.build]
 enabled = true
-"platform:windows-x86_64".enabled = true
+"platform:windows-x86_64".enabled = false
 
 
 ########################################################################################################################
