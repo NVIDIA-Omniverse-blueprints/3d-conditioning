@@ -434,10 +434,10 @@ class ViewportBuffersCapture:
                 await vp_util.next_viewport_frame_async(self._viewport, n_frames=frames_to_wait)
             i += 1
 
-        prim_lakeview = self._viewport.stage.GetPrimAtPath("/World/Cameras/ProjectionTemplate_LakeView")
+        prim_lakeview = self._viewport.stage.GetPrimAtPath("/World/HDRI_backgrounds/Projection_LakeView")
         prim_lakeview_visibility = prim_lakeview.GetAttribute("visibility")
         prim_lakeview_visibility_value = prim_lakeview_visibility.Get()
-        prim_lookout = self._viewport.stage.GetPrimAtPath("/World/Cameras/ProjectionTemplate_lookout")
+        prim_lookout = self._viewport.stage.GetPrimAtPath("/World/HDRI_backgrounds/Projection_lookout")
         prim_lookout_visibility = prim_lookout.GetAttribute("visibility")
         prim_lookout_visibility_value = prim_lookout_visibility.Get()
         if prim_lakeview_visibility_value == "inherited" and prim_lookout_visibility_value == "inherited":
