@@ -32,4 +32,10 @@ echo "Starting Kit with $$CMD $${ARGS[@]} $$@"
 chown -R ubuntu:ubuntu /home/ubuntu/.cache/ov
 chown -R ubuntu:ubuntu /home/ubuntu/.local/share/ov
 
-exec "$$CMD" "$${ARGS[@]}" "$$@"
+while true; do
+  echo "Kit is starting"
+  "$$CMD" "$${ARGS[@]}" "$$@"
+  echo "Kit shutdown is complete"
+done
+
+echo "Container is exiting"
