@@ -39,13 +39,13 @@ Here's how to add the necessary extensions to your custom application: </br>
    </br>
 4. Copy the **blueprint's** extensions to **your kit-app-template** extensions folder (e.g. `{full-path-kit-app-template}\source\extensions`)
    </br>
-5. Navigate to **your app's** `premake.lua` file at `{full-path-kit-app-template}\premake5.lua`
+5. Navigate to **your app's** `premake5.lua` file at `{full-path-kit-app-template}\premake5.lua`
    </br>
 6. Locate the `define_app` calls and add new a `define_app` as follows:
    ```
       define_app("omni.app.conditioning_for_precise_visual_generative_ai.kit")
    ```
-   Save `premake.lua`
+   Save `premake5.lua`
    </br>
 7. Navigate to your app's `repo.toml` file at `{full-path-kit-app-template}\repo.toml`
    </br>
