@@ -2,7 +2,7 @@ appName: streamer
 
 image_streamer:
   repository: "nvcr.io/nvidia/omniverse/conditioning-for-precise-visual-generative-ai-streaming"
-  tag: "1.0.0"
+  tag: "1.1.0"
   pullPolicy: "Always"
   port_min1: 47995
   port_max1: 48012

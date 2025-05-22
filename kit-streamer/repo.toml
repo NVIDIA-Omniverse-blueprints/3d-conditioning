@@ -3,38 +3,78 @@
 ########################################################################################################################
 
 [repo]
-# Use Kit Template repo configuration as a base. Only override things specific to the repo.
+
+# Use the Kit Template repo configuration as a base. Only override things specific to the repo.
 import_configs = [
-    # Shared config for all kit extensions repos
     "${root}/_repo/deps/repo_kit_tools/kit-template/repo.toml",
-    # Shared config for kit extensions repos that also publish an app to the Launcher
-    "${root}/_repo/deps/repo_kit_tools/kit-template/repo-app.toml"
+    "${root}/_repo/deps/repo_kit_tools/kit-template/repo-external-app.toml",
 ]
+
 
 # Repository Name. It is used for solution name and final package name
 name = "kit-streamer"
 
-# Disable linbuild until we have a public image available.
-[repo_build.docker]
-enabled = false
+[repo_build]
+# These are necessary to avoid a repo_build failure where the source/apps directory
+# is expected to always exist.
+fetch."platform:linux-x86_64".before_pull_commands = [
+    ["mkdir", "--parents", "${root}/source/apps"],
+]
 
-[repo_build.licensing]
-enabled = false
+# Mute this command, don't emit to console.
+fetch."platform:windows-x86_64".before_pull_commands = [
+    ["powershell", "-Command", "New-Item -ItemType Directory -Path ${root}/source/apps -ErrorAction SilentlyContinue", ";", "Write-Host 'Done'"],
+]
 
-[repo_build.fetch.pip]
-licensing_enabled = false
+# If caching do not try to cache extensions. These will come from the NGC Kit Extension Registry.
+fetch."token:cache==true".after_pull_commands = []
 
-# Do not try to publish a pip cache to S3
-publish_pip_cache = false
-
-[repo_build.msbuild]
-link_host_toolchain = false
-vs_version = "" # empty-string == automatch if possible
 
 [repo_build.build]
 enabled = true
 "platform:windows-x86_64".enabled = false
 
+[repo_build.msbuild]
+# If set to true will attempt to link to host's Visual Studio and Windows SDK installations.
+# This is needed if C++ compilation is needed on Windows, and repo_build.build.enabled is set to true.
+link_host_toolchain = false
+
+# Filter on Visual Studio version e.g.: Visual Studio 2022. Empty string will match all years and prioritize the newest.
+vs_version = "vs2022"
+
+# Visual Studio path; This will be used if the user would like to point to a specific VS installation rather than rely on heuristic locating.
+# vs_path = "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\"
+
+# Filter specifically to "Enterprise", "Professional", or "Community" editions of Visual Studio
+# vs_edition = "Community"
+
+# Filter by Visual Studio installations that have installed this version of the MSVC compiler.
+# msvc_version = "v142"
+
+# Filter by Visual Studio installations that ship with MSBuild of this major version.
+# msbuild_version = "17"
+
+# Windows SDK version
+# winsdk_version = "10.0.17763.0"
+
+# Windows SDK path; This will prevent needing to dynamically locate an installation by guesswork.
+# winsdk_path = "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.17763.0"
+
+# Disable linbuild until we have a public image available.
+[repo_build.docker]
+enabled = false
+
+[repo_build.fetch.pip]
+# List of pip files to pip install from (in order)
+files_to_pull = [
+    "${root}/tools/deps/pip.toml"
+]
+
+# Do not gather Python dependency licenses
+licensing_enabled = false
+
+# Do not try to publish a pip cache to S3
+publish_pip_cache = false
 
 ########################################################################################################################
 # Test Runner
@@ -100,6 +140,11 @@ apps = [
     "${root}/source/apps/omni.app.conditioning_for_precise_visual_generative_ai_streaming.kit",
 ]
 
+registries = [
+    { name = "kit/default", url = "https://ovextensionsprod.blob.core.windows.net/exts/kit/prod/107/shared" },
+    { name = "kit/sdk", url = "https://ovextensionsprod.blob.core.windows.net/exts/kit/prod/sdk/${kit_version_short}/${kit_git_hash}" },
+    { name = "kit/community", url = "https://dw290v42wisod.cloudfront.net/exts/kit/community" },
+]
 
 ########################################################################################################################
 # Documentation building
@@ -141,6 +186,7 @@ omniverse_flow_version_scheme=true
 package_per_config = true                   # By default we only build + package release.
 append_config = true                        # Set to true to append release/debug config to package name.
 archive_format = "zip"                      # We support "7z", "zip", "tar.gz", "tar.bz2"
+windows_max_path_length = 0
 #build_version = "${file:${config_root}/tools/VERSION.md}"  # It's ignored when omniverse_flow_version_scheme is true
 
 files = [
@@ -158,6 +204,7 @@ files_exclude = [
     ["logs/**"],
     ["apps/kit.portable"],
     ["**/__pycache__"],
+    ["**/_repo/**"],
 ]
 "linux-x86_64".files_strip = []
 
@@ -169,6 +216,7 @@ omniverse_flow_version_scheme=true
 package_per_config = true
 append_config = true
 archive_format = "zip"
+windows_max_path_length = 0
 #build_version = "${file:${config_root}/tools/VERSION.md}"
 
 files = [
@@ -188,5 +236,6 @@ files_exclude = [
     ["logs/**"],
     ["apps/kit.portable"],
     ["**/__pycache__"],
+    ["**/_repo/**"],
 ]
 "linux-x86_64".files_strip = []

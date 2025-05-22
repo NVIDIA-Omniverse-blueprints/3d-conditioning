@@ -10,7 +10,7 @@
 
 [package]
 title = "Messaging"
-version = "1.0.0"  # Semantic Versionning is used: https://semver.org/
+version = "1.1.0"  # Semantic Versionning is used: https://semver.org/
 description = "Messaging functionalities."
 category = "Messaging"  # How to categorize this in the Extension Manager
 changelog = "docs/CHANGELOG.md"
