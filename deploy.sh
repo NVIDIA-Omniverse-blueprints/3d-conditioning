@@ -3,7 +3,7 @@
 set -e
 
 export HELM_RELEASE=conditioning-for-precise-visual-generative-ai-helm
-export HELM_VERSION=1.0.0
+export HELM_VERSION=1.1.0
 export HELM_CHART_PATH=./helm
 export IMAGE_PULL_SECRET=conditioningpullsecret
 
