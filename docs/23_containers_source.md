@@ -22,7 +22,7 @@ To build containers, users need to have access to the docker images repository.
    docker push $CONTAINER_URL:$CONTAINER_VERSION
    ```
 
-4. For `kit-streamer`, build steps are the following from the root:
+4. For `kit-streamer`, build steps are the following from the root (you may need to install docker compose if it fails on packaging step):
    ```
    cd kit-streamer
 
@@ -31,7 +31,7 @@ To build containers, users need to have access to the docker images repository.
 
    ./build.sh -ru
 
-   ./repo.sh package --container --target-app omni.app.conditioning_for_precise_visual_generative_ai_streaming.kit --image-tag $CONTAINER_URL:$CONTAINER_VERSION
+   ./repo.sh package --container --target-app omni.app.conditioning_for_precise_visual_generative_ai_streaming.kit --name $CONTAINER_URL:$CONTAINER_VERSION
 
    docker push $CONTAINER_URL:$CONTAINER_VERSION
    ```
